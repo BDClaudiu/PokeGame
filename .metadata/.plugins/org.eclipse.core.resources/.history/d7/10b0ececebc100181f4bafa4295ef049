@@ -1,0 +1,43 @@
+package main;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Main
+ */
+@WebServlet("/init")
+public class Main extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+    public Main() {
+        super();
+      
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String userName = request.getParameter("userName");
+		String userPassword = request.getParameter("passwordText");
+		// lets put a easy password check, 
+		// here later we will check the database using queries if the pass entered is the same as the one in the database
+		
+		if(userName=="marzie" && userPassword =="1234")
+			
+		
+		doGet(request, response);
+	}
+
+}

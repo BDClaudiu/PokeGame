@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>LoginAccount try</title>
+</head>
+<body>
+
+
+
+<%
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	String userName = request.getParameter("userName");
+	String userPassword = request.getParameter("passwordText");
+	// lets put a easy password check, 
+	// here later we will check the database using queries if the pass entered is the same as the one in the database
+	// password is a string since whatever the user types will be send as a string
+	if(userName.equalsIgnoreCase("marzie") && userPassword.equals("1234"))
+		response.sendRedirect("LoginSuccessPage.jsp");
+	else 
+		response.sendRedirect("LoginFailPage.jsp");
+	
+
+}
+
+%> 
+
+
+</body>
+</html>

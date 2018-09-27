@@ -1,0 +1,55 @@
+package main;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Main
+ */
+@WebServlet("/init")
+public class Main extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+    public Main() {
+        super();
+      
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/Login.jsp").forward(request,response);
+
+	
+		// if (request.getParameterMap().containsKey("userblock")|| request.getParameterMap().containsKey("userUnblock"))
+			UserBlockedConfirm(request,response);
+		
+	}
+
+	
+		private void UserBlockedConfirm(HttpServletRequest request, 
+				HttpServletResponse response) throws ServletException, IOException {
+			
+		request.getRequestDispatcher("LoginSuccessPage.jsp").forward(request, response);	
+	}
+		
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		
+//		String userName = request.getParameter("userName");
+//		String userPassword = request.getParameter("passwordText");
+//		// lets put a easy password check, 
+//		// here later we will check the database using queries if the pass entered is the same as the one in the database
+//		// password is a string since whatever the user types will be send as a string
+//		if(userName.equalsIgnoreCase("marzie") && userPassword.equals("1234"))
+//			response.sendRedirect("LoginSuccessPage.jsp");
+//		else 
+//			response.sendRedirect("LoginFailPage.jsp");
+//		
+//		
+//	}
+
+}
