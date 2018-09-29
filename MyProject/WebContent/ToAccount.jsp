@@ -10,10 +10,11 @@
 
 <%
 // Here we can put java code !!!
-String userName = request.getParameter("userName");
+String userEmail = request.getParameter("userName");
 String userPassword = request.getParameter("passwordText");
-		
-		if(userName.equalsIgnoreCase("marzie") && userPassword.equalsIgnoreCase("123"))
+
+//if email and password equal to what you have in the database or datastructure
+		if(userEmail.equalsIgnoreCase("") && userPassword.equalsIgnoreCase(""))
 			response.sendRedirect("LoginSuccessPage.jsp");
 		else
 			response.sendRedirect("LoginFailPage.jsp");

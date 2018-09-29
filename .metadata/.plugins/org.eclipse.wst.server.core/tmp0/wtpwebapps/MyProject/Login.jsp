@@ -7,7 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+// Here we can put java code !!!
 
+String registerdEmail = request.getParameter("regemail");
+String registerdPassword =  request.getParameter("regpassword");
+	
+		System.out.println(registerdEmail);
+
+		System.out.println(registerdPassword);
+
+%>
 <form method="get" action="Controller">
 	<table>
 		<tr>
@@ -21,6 +31,7 @@
 		<tr>
 			<td></td>
 			<td> <input type="submit" value="Login Btb" name="toAccount"> </td>
+			<td> <input type="button" value="Register" name="toRegister" onclick="location.href='RegistrationPage.jsp'"> </td>
 		</tr>
 	</table>
 </form>

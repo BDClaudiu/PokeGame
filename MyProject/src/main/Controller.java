@@ -19,7 +19,11 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getParameterMap().containsKey("toAccount"))
 			ToALoginSuccess(request,response);
+		if(request.getParameterMap().containsKey("toRegisterSuccess"))
+			ToRegisterSuccess(request,response);
 	}
+	
+	
 	
 	
 	
@@ -34,6 +38,12 @@ public class Controller extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("ToAccount.jsp").forward(request, response);	
 	}
+	
+	//foward request to appropriete file
+		private void ToRegisterSuccess(HttpServletRequest request, 
+				HttpServletResponse response) throws ServletException, IOException {
+			request.getRequestDispatcher("RegistrationSuccessfullPage.jsp").forward(request, response);	
+		}
 
 	
 
